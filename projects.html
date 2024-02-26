@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> My Projects</title>
+<link rel="stylesheet" href="styles.css"> 
+<style>
+    .project-content img {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    /* Additional styles for overlay text */
+    .image-overlay {
+        position: relative;
+        width: calc(50% - 10px); /* Adjust width based on your layout, respecting the gap */
+        display: inline-block; /* Align images side by side */
+        cursor: pointer;
+    }
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white; /* Ensure the text is visible over your images */
+        font-size: 20px; /* Adjust size as needed */
+        text-align: center;
+        width: 100%; /* Ensure the text spans the width of the image */
+    }
+    @media (max-width: 768px) {
+        .image-overlay {
+            width: 100%; /* Full width on smaller screens */
+        }
+    }
+    /* Centering project description */
+    .project-description {
+        text-align: center;
+    }
+    .project-description p {
+        margin: 0; /* Removes default margin */
+        padding: 10px; /* Adds some padding */
+    }
+</style>
+</head>
+<body>
+
+<header class="header-name">My Projects</header>
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div class="page-description-container">
+    <p class="page-description">This page is dedicated to showcasing my achievements and projects.</p>
+</div>
+
+<section class="project">
+    <div class="project-content">
+        <div class="project-description">
+            <h2>Perennial Pollinator Garden for The Forbes House Museum</h2>
+            <p>January 2021 - May 2021</p>
+            <p>Boston, Massachusetts, United States</p>
+            <p>Earned the rank of Eagle Scout after constructing a perennial pollinator garden at The Forbes House Museum in Milton, MA.</p>
+        </div>
+        <!-- Wrap images in a div for overlay -->
+        <div class="image-overlay" onclick="openModal();currentSlide(1)">
+            <img src="C:\Users\eliot\pictures\eagle scout\IMG_4695.jpg" style="width:100%" onclick="openLightbox();currentImage(1)" class="project-image">
+        </div>
+        <div class="image-overlay" onclick="openModal();currentSlide(2)">
+            <img src="C:\Users\eliot\pictures\eagle scout\fromdriveway.jpg" style="width:100%" onclick="openLightbox();currentImage(2)" class="project-image">
+        </div>
+        <div class="image-overlay" onclick="openModal();currentSlide(3)">
+            <img src="C:\Users\eliot\pictures\eagle scout\IMG_4790.jpg" style="width:100%" onclick="openLightbox();currentImage(3)" class="project-image">
+        </div>
+    </div>
+</section>
+
+<script>
+    function expandImage(img) {
+        const isExpanded = img.style.transform === 'scale(2)';
+        img.style.transform = isExpanded ? 'scale(1)' : 'scale(2)';
+    }
+    function openLightbox() {
+        document.getElementById('myLightbox').style.display = 'block';
+    }
+
+    function closeLightbox() {
+        document.getElementById('myLightbox').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
